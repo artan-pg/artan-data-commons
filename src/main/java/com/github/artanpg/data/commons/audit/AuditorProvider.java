@@ -7,7 +7,7 @@ package com.github.artanpg.data.commons.audit;
  * @author Mohammad Yazdina
  */
 @FunctionalInterface
-public interface AuditorAware<T> {
+public interface AuditorProvider<T> {
 
     /**
      * Returns the current auditor of the application.

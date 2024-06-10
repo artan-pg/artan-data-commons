@@ -12,12 +12,12 @@ import java.util.Objects;
  */
 public class AuditingHandler {
 
-    private final AuditorAware<Object> auditorAware;
+    private final AuditorProvider<Object> auditorProvider;
     private final TemporalAccessorProvider temporalAccessorProvider;
 
-    public AuditingHandler(AuditorAware<Object> auditorAware,
+    public AuditingHandler(AuditorProvider<Object> auditorProvider,
                            TemporalAccessorProvider temporalAccessorProvider) {
-        this.auditorAware = auditorAware;
+        this.auditorProvider = auditorProvider;
         this.temporalAccessorProvider = temporalAccessorProvider;
     }
 
@@ -33,7 +33,7 @@ public class AuditingHandler {
             throw new IllegalArgumentException("The target must be of Auditable type.");
         }
         Auditable<Object, ?> auditable = (Auditable<Object, ?>) target;
-        auditable.setCreatedBy(auditorAware.getCurrentAuditor());
+        auditable.setCreatedBy(auditorProvider.getCurrentAuditor());
         auditable.setCreatedDate(temporalAccessorProvider.getTemporalAccessor());
     }
 
@@ -49,7 +49,7 @@ public class AuditingHandler {
             throw new IllegalArgumentException("The target must be of Auditable type.");
         }
         Auditable<Object, ?> auditable = (Auditable<Object, ?>) target;
-        auditable.setLastModifiedBy(auditorAware.getCurrentAuditor());
+        auditable.setLastModifiedBy(auditorProvider.getCurrentAuditor());
         auditable.setLastModifiedDate(temporalAccessorProvider.getTemporalAccessor());
     }
 
@@ -65,7 +65,7 @@ public class AuditingHandler {
             throw new IllegalArgumentException("The target must be of Auditable and Deletable type.");
         }
         Auditable<Object, ?> auditable = (Auditable<Object, ?>) target;
-        auditable.setDeletedBy(auditorAware.getCurrentAuditor());
+        auditable.setDeletedBy(auditorProvider.getCurrentAuditor());
         auditable.setDeletedDate(temporalAccessorProvider.getTemporalAccessor());
     }
 
