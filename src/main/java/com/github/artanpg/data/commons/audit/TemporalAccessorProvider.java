@@ -8,6 +8,7 @@ import java.time.temporal.TemporalAccessor;
  *
  * @author Mohammad Yazdian
  */
+@FunctionalInterface
 public interface TemporalAccessorProvider {
 
     /**
