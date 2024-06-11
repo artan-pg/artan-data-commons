@@ -22,5 +22,5 @@ public interface Persistable<I extends Serializable> extends Serializable {
      *
      * @return true, if the entity is new
      */
-    boolean checkNewRecord();
+    boolean newRecord();
 }
