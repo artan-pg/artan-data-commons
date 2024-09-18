@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ir.artanpg.data</groupId>
+        <artifactId>artan-data-parent</artifactId>
+        <version>0.0.0-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>artan-data-commons</artifactId>
+    <version>0.0.0-SNAPSHOT</version>
+
+    <name>artan-data-commons</name>
+    <description>Common concepts underpinning every Artan Data module.</description>
+    <url>https://github.com/artan-pg/artan-data-commons</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>restless</id>
+            <name>Mohammad Yazdian</name>
+            <email>m.yazdian70@outlook.com</email>
+            <organization>ArtanPG</organization>
+            <organizationUrl>https://github.com/artan-pg</organizationUrl>
+            <roles>
+                <role>Project lead</role>
+            </roles>
+            <timezone>+3:30</timezone>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/artan-pg/artan-data-commons</url>
+        <connection>scm:git:https://github.com/artan-pg/artan-data-commons.git</connection>
+        <developerConnection>scm:git:https://github.com/artan-pg/artan-data-commons.git</developerConnection>
+        <tag>${project.version}</tag>
+    </scm>
+
+    <issueManagement>
+        <url>https://github.com/artan-pg/artan-data-commons/issues</url>
+        <system>GitHub</system>
+    </issueManagement>
+
+    <build>
+        <defaultGoal>clean compile package</defaultGoal>
+    </build>
+</project>
